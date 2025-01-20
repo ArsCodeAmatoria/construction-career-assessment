@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Construction Career Assessment</title>
+
+    <!-- Bootstrap CSS (via CDN) -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Construction Career Assessment</h1>
+        <p class="text-center">Please answer the following questions to find your ideal career path in construction.</p>
+
+        <form id="questionnaire-form">
+            <!-- Question 1 -->
+            <div class="form-group">
+                <label for="workEnvironment">What is your preferred work environment?</label>
+                <select class="form-control" id="workEnvironment" name="workEnvironment" required>
+                    <option value="indoor">Indoor</option>
+                    <option value="outdoor">Outdoor</option>
+                    <option value="both">Both</option>
+                </select>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="form-group">
+                <label for="taskType">What type of tasks do you enjoy?</label>
+                <select class="form-control" id="taskType" name="taskType" required>
+                    <option value="manual">Manual Labor</option>
+                    <option value="analysis">Analysis/Problem Solving</option>
+                    <option value="supervision">Supervision/Management</option>
+                </select>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="form-group">
+                <label for="independentVsTeam">Do you prefer working independently or in teams?</label>
+                <select class="form-control" id="independentVsTeam" name="independentVsTeam" required>
+                    <option value="independent">Independently</option>
+                    <option value="team">In a Team</option>
+                </select>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        </form>
+
+        <!-- Thank you message -->
+        <div id="thankYouMessage" class="alert alert-success mt-4" style="display: none;">
+            <strong>Thank you for completing the questionnaire!</strong>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and jQuery (via CDN) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- Custom JavaScript to handle form submission -->
+    <script>
+        document.getElementById("questionnaire-form").addEventListener("submit", function(e) {
+            e.preventDefault(); // Prevent form submission
+
+            // Show thank you message
+            document.getElementById("thankYouMessage").style.display = "block";
+            
+            // Optionally, you can collect and log the form data
+            const formData = new FormData(this);
+            formData.forEach((value, key) => {
+                console.log(key + ": " + value);
+            });
+        });
+    </script>
+</body>
+</html>
