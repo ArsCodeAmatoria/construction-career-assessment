@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Construction Career Assessment</title>
-
-    <!-- Bootstrap CSS (via CDN) -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -14,7 +12,7 @@
         <h1 class="text-center">Construction Career Assessment</h1>
         <p class="text-center">Please answer the following questions to find your ideal career path in construction.</p>
 
-        <form id="questionnaire-form">
+        <form id="questionnaire-form" action="YOUR_GOOGLE_APPS_SCRIPT_URL" method="POST">
             <!-- Question 1 -->
             <div class="form-group">
                 <label for="workEnvironment">What is your preferred work environment?</label>
@@ -44,6 +42,95 @@
                 </select>
             </div>
 
+            <!-- Questions 4-30: Repeat the structure for more questions -->
+            <div class="form-group">
+                <label for="q4">Question 4: How do you feel about physical work?</label>
+                <select class="form-control" id="q4" name="q4" required>
+                    <option value="enjoy">Enjoy</option>
+                    <option value="neutral">Neutral</option>
+                    <option value="dislike">Dislike</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="q5">Question 5: Would you like to manage a team?</label>
+                <select class="form-control" id="q5" name="q5" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="q6">Question 6: Do you prefer to work with technology?</label>
+                <select class="form-control" id="q6" name="q6" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="q7">Question 7: How would you rate your leadership skills?</label>
+                <select class="form-control" id="q7" name="q7" required>
+                    <option value="excellent">Excellent</option>
+                    <option value="good">Good</option>
+                    <option value="average">Average</option>
+                    <option value="poor">Poor</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="q8">Question 8: Are you willing to travel for work?</label>
+                <select class="form-control" id="q8" name="q8" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="q9">Question 9: Do you like working with machinery?</label>
+                <select class="form-control" id="q9" name="q9" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="q10">Question 10: How comfortable are you with heights?</label>
+                <select class="form-control" id="q10" name="q10" required>
+                    <option value="comfortable">Comfortable</option>
+                    <option value="neutral">Neutral</option>
+                    <option value="uncomfortable">Uncomfortable</option>
+                </select>
+            </div>
+
+            <!-- Repeat this block for more questions until 30 -->
+            <div class="form-group">
+                <label for="q11">Question 11: Do you prefer working in a structured or flexible environment?</label>
+                <select class="form-control" id="q11" name="q11" required>
+                    <option value="structured">Structured</option>
+                    <option value="flexible">Flexible</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="q12">Question 12: Are you detail-oriented?</label>
+                <select class="form-control" id="q12" name="q12" required>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <!-- Repeat the same structure for the remaining questions (13-30) -->
+
+            <div class="form-group">
+                <label for="q30">Question 30: How would you describe your work ethic?</label>
+                <select class="form-control" id="q30" name="q30" required>
+                    <option value="strong">Strong</option>
+                    <option value="average">Average</option>
+                    <option value="weak">Weak</option>
+                </select>
+            </div>
+
             <!-- Submit Button -->
             <button type="submit" class="btn btn-primary btn-block">Submit</button>
         </form>
@@ -54,7 +141,6 @@
         </div>
     </div>
 
-    <!-- Bootstrap JS and jQuery (via CDN) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -72,6 +158,9 @@
             formData.forEach((value, key) => {
                 console.log(key + ": " + value);
             });
+
+            // Reset form after submission
+            this.reset();
         });
     </script>
 </body>
